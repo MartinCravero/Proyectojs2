@@ -1,0 +1,499 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto&display=swap');
+
+
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+:root{
+    font-family: Montserrat;
+    font-weight: 700;
+}
+/*-------------HEADER-------------*/
+nav{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.logo{
+    height: 38.8px;
+    width: 48.8px;
+    margin: 29px 0 0 22px;
+}
+
+.menu-desck{
+    display: none;
+}
+
+.check{
+    display: none;
+}
+
+.check-bg{
+    width: 15pxs;
+    margin: 47px 26px 0 0;
+}
+
+.checkburger:checked~.burger{
+    display: none;
+}
+
+.checkburger:not(:checked)~.cross{
+    display: none;
+}
+
+.checkburger:checked~.menu-burger{
+    position: absolute;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #572EE5;
+    opacity: 90%;
+    width: 100vw;
+    height: 484px;
+    z-index: 1;
+}
+
+.checkburger:not(:checked)~.menu-burger{
+    display:none
+}
+
+li{
+    font-size: 15px;
+    list-style-type: none;
+    line-height: 60px;
+    margin-top: 17px;
+}
+.line{
+    display: block;
+    height: 1px;
+    width: 41px;
+    background-color: #FFFFFF;
+    opacity: 50%;
+}
+
+a{
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 15px;
+}
+
+/*-------------MAIN-------------*/
+.sect-searcher{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.div-title{
+    font-size: 25px;
+    width: 286px;
+    margin-top: 7px;
+    color: #572EE5;
+    text-align: center;
+}
+
+.span-GIFOS{
+    color: #50E3C2;
+    font-size: 25px;
+}
+
+.img-main{
+    width: 273px;
+    margin-top: 31px;
+}
+
+.searcher{
+    max-width: 551px;
+    width: 90%;
+    font-family: Roboto;
+    font-size: 16px;
+}
+
+.searcher .searchInput{
+    width: 100%;
+    border-radius: 27px;
+    border: solid #572EE5;
+    position: relative;   
+}
+
+.searchInput input{
+    width: 750%;
+    height: 50px;
+    outline: none;
+    border: none;
+    border-radius: 27px;
+    margin-left: 54px;
+    /*box-shadow: 0px 1px 5px rgba(0,0,0,0.1);*/
+}
+
+.searchInput .autocompletBox{
+    padding: 0px;
+    pointer-events: none;
+    overflow-y: auto;
+    opacity: 0;
+}
+
+.searchInput  .autocompletBox.active{
+    padding: 10px 8px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+
+.iconSearch{
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+
+.autocompletBox .searchItem{
+    list-style: none;
+    margin-left: 54px;
+    width: 100%;
+    cursor: default;
+    border-radius: 3px;
+    display: none;
+}
+
+.autocompletBox.active .searchItem{
+    display: block;
+}
+
+.trending-h2{
+    color: #572EE5;
+    font-size: 16px;
+    margin-top: 31px;
+}
+
+.trending-p{
+    width: 225px;
+    font-size: 14px;
+    color: #572EE5;
+    text-align: center;
+    font-weight: 500;
+}
+
+.bar{
+    background-color: #9CAFC3;
+    width: 157px;
+    height: 1px;
+    margin-top: 157px;
+}
+
+/*-------------TRENDING-------------*/
+
+.sect-trending-gif{
+    background-color: #F3F5F8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /*height: 430px;*/
+}
+
+.trend-h1{
+    color: #572EE5;
+    font-size: 25px;
+    text-align: center;
+}
+
+.trend-p-mob{
+    font-family: Roboto;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 400;
+}
+.trend-p-desk{
+    display: none;
+}
+
+.trend-galery{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.trend-gifos{
+    display:flex;
+    overflow-x: auto;
+    max-height: 187px;
+    margin: 32px 0 82px 0;
+}
+
+.gif-container{
+    position: relative;
+}
+
+.gif-trending{
+    margin-right: 22px;
+    min-width: 243px;
+    width: 243px;
+    height: 187px;
+}
+
+.slider{
+    display: none;
+    border: none;
+    background-color: #F3F5F8;
+}
+
+.slider-hover{
+    display: none;
+    border: none;
+}
+
+.slider-left .slider-right{
+    display: none;
+}
+
+/*-------------FOOTER-------------*/
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-title{
+    font-family: Roboto;
+    font-size: 15px;
+    margin: 49px 0 24px 0;
+    font-weight: 400;
+}
+
+.social-media{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 30%;
+}
+
+.rights{
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 47.8px 0 23px 0;
+}
+
+@media screen and (min-width:1024px) {
+
+/*-------------HEADER DESCKTOP-------------*/
+
+    .menu-burger{
+        display:none
+    }
+
+    .check-bg{
+        display: none;
+    }
+
+    .menu-desck{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-right: 50px;
+    }
+
+    a{
+        color: #572EE5;
+        font-size: 13px;
+        margin-right: 50px;
+    }
+
+    .make-gif:checked~.make-notcheck{
+        display: none;
+    }
+
+    .make-gif:not(:checked)~.make-check{
+        display: none;
+    }
+
+/*-------------MAIN DESKTOP-------------*/
+
+    .div-title{
+        font-size: 35px;
+        width: 551px;
+        margin-top: 76px;
+    }
+    
+    .span-GIFOS{
+        font-size: 35px;
+    }
+    
+    .img-main{
+        margin-top: 24px;
+        width: 399px;
+    }
+    
+    .searcher{
+        max-width: 551px;
+        width: 551px;
+    }
+    
+    .searchInput input{
+        width: 75%;
+        height: 50px;
+        outline: none;
+        border: none;
+        border-radius: 27px;
+        margin-left: 54px;
+    }
+
+    .autocompletBox{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .searchItem{
+        margin-left: 54px;
+    }
+
+    .trending-h2{
+        font-size: 18px;
+    }
+
+    .trending-p{
+        font-size: 16px;
+        width: 402px;
+    }
+
+/*-------------TRENDING DESKTOP-------------*/
+    .sect-trending-gif{
+        height: 52vw;
+    }
+
+    .trend-h1{
+        font-size: 25px;
+        margin: 67px 0 12px 0;
+    }
+
+    .trend-p-mob{
+        display: none;
+    }
+
+    .trend-p-desk{
+        display: block;
+        font-size: 18px;
+        font-family: Roboto;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    .trend-galery{
+        align-items: center;
+    }
+
+    .gif-cont{
+        width: 357px;
+        height: 275px;
+        margin: 53px 29px 182px 0;
+    }
+
+    .trend-gifos{
+        overflow-x: unset;
+    }
+
+    .gif-trending{
+        width: 357px;
+        height: 275px;
+    }
+
+    
+    .gif-hover{
+        position: absolute;
+        width: 357px;
+        height: 275px;
+        top: 0;
+        left: 0;
+        background-color: #572EE5;
+        opacity: 0;
+    }
+
+    .gif-hover:hover{
+        opacity: 0.7;
+    }
+
+    .buttons{
+        position: absolute;
+        width: 135px;
+        right: 0;
+        top: 0;
+    }
+
+    .button-gif{
+        border-radius: 6px;
+        margin: 5% 1% 0 0;
+    }
+
+    .gif-text{
+        color: #FFFFFF;
+        font-family: Roboto;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        bottom: 12%;
+        left: 3%;
+    }
+
+    .text-user{
+        font-weight: 200;
+    }
+
+    .text-name{
+        font-weight: 600;
+    }
+
+    .slider-left {
+        display: flex;
+        width: 40px;
+        height: 40px;
+    }
+
+    .slider{
+        display: block;
+    }
+
+    .slider-left:hover .slider-l{
+        display: none;        
+    }
+
+    .slider-left:hover .slider-hover-l{
+        display: block;        
+    }
+
+    .slider-right:hover .slider-r{
+        display: none;        
+    }
+
+    .slider-right:hover .slider-hover-r{
+        display: block;        
+    }
+
+
+/*-------------FOOTER DESKTOP-------------*/
+
+    footer{
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .footer-title, .rights{
+        font-size: 13px;
+        margin: 49.5px 0 51.5px 0;
+    }
+
+
+    .social-media{
+        margin: 49.5px 0 51.5px -300px;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+    }
+}
