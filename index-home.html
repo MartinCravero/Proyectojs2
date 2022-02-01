@@ -8,17 +8,17 @@
     <link rel="stylesheet" href="style.css">
     <script src="./index.js"></script>
 </head>
-<body>
+<body id="body">
     <header>
         <nav>
             <a href="#" >
-                <img class="logo" src="./iconos/logo-mobile.svg" alt="">
+                <img class="logo" src="./iconos/logo-mobile.svg" alt="" id="logo-mobile">
             </a>
             <input id="checkburger" type="checkbox" class="check checkburger">
             <label for="checkburger" class="check-bg burger"><img src="./iconos/burger.svg" alt="="></label>
             <label for="checkburger" class="check-bg cross"><img src="./iconos/close.svg" alt="x"></label>
             <ul class="menu-burger">
-                <li><a href="#" >MODO NOCTURNO</a></li>
+                <li class="btndark" id="btnDarkMobile"><a href="#" >MODO NOCTURNO</a></li>
                 <span class="line"></span>
                 <li><a href="#" >FAVORITOS</a></li>
                 <span class="line"></span>
@@ -27,7 +27,7 @@
             </ul>
         
             <ul class="menu-desck">
-                <li><a href="#" >MODO NOCTURNO</a></li>
+                <li><a href="#" id="btnDarkMode">MODO NOCTURNO</a></li>
                 <li><a href="#" >FAVORITOS</a></li>
                 <li><a href="#" >MIS GIFOS</a></li>
                 <li><a href="#" >
@@ -38,57 +38,67 @@
             </ul>
         </nav>
     </header>
+
+    <main>
+        <section class="sect-searcher" id="sectSearcher">
+
+                <div class="div-title">Inspírate, busca, guarda, y crea los mejores <span class="span-GIFOS">GIFOS</span></div>
+                <img class="img-main" src="./iconos/ilustra_header.svg" alt="">
+
+            <div class="searcher">
+                <div class="searchInput">
+                    <input type="text" placeholder="Busca GIFOS y más" class="inputSearch" id="inputSearch">
+                    <div class="autocompletBox" id="autocompletBox"></div>
+                    <div class="iconSearch" id="iconSearch"><img id="imgIconSearch" src="./iconos/icon-search.svg" alt=""></div>
+                    <div class="iconDelete" id="iconDelete"><img id="imgIconDelete"src="./iconos/close.svg" alt=""></div>
+                </div>
+            </div>
+
+            <h2 class="trending-h2">Trending:</h2>
+            <p class="trending-p" id="trendingP">Reactions, Entertainment, Sports, Stickers, Artists</p>
+            <div class="bar"></div>
+            <div class="gifosResults" id="gifosResults"></div>
+            <div class="moreResults" id="moreResults">
+                <img src="./iconos/CTA-ver-mas.svg"  class="moreResultsButt" id="moreResultsButt" alt="">
+                <img src="./iconos/CTA-ver-mas-hover.svg" class="moreResultsButtHover" id="moreResultsButtHover" alt="">
+            </div>
+
+        </section>
+
+        <section class="sect-trending-gif">
+
+            <h1 class="trend-h1">Trending GIFOS</h1>
+            <p class="trend-p-mob">Mira los últimos</br> GIFOS de nuestra comunidad.</p>
+            <p class="trend-p-desk">Mira los últimos GIFOS de nuestra comunidad.</p>
+            <div class="trend-galery">
+                <div class="slider-left">
+                    <button class="slider slider-l"><img src="./iconos/button-slider-left.svg" alt=""></button>
+                    <button class="slider-hover slider-hover-l"><img src="./iconos/button-slider-left-hover.svg" alt=""></button>
+                </div>
+                <div class="trend-gifos" id="trend-gifos"></div>
+                <div class="slider-right">
+                    <button class="slider slider-r"><img src="./iconos/Button-Slider-right.svg" alt=""></button>
+                    <button class="slider-hover slider-hover-r"><img src="./iconos/Button-Slider-right-hover.svg" alt=""></button>
+                </div>
+                
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <h1 class="footer-title">Compartir en:</h1>
+        <div class="social-media">
+            <a class="media-icon" href=""><img src="./iconos/icon_facebook.svg" alt=""></a>
+            <a class="media-icon" href=""><img src="./iconos/icon-twitter.svg" alt=""></a>
+            <a class="media-icon" href=""><img src="./iconos/icon_instagram.svg" alt=""></a>
+        </div>
+        <h2 class="rights">© GIFOS 2021 All Rights Reserved.</h2>
+    </footer>
+
 </body>
-<main>
-    <section class="sect-searcher">
+<body>
 
-            <div class="div-title">Inspírate, busca, guarda, y crea los mejores <span class="span-GIFOS">GIFOS</span></div>
-            <img class= "img-main" src="./iconos/ilustra_header.svg" alt="">
+    
 
-        <div class="searcher">
-            <div class="searchInput">
-                <input type="text" placeholder="Busca GIFOS y más" id="inputSearch">
-                <div class="autocompletBox"></div>
-                <div class="iconSearch"><img src="./iconos/icon-search.svg" alt=""></div>
-                <div class="iconDelete"><img src="./iconos/close.svg" alt=""></div>
-            </div>
-        </div>
-
-        <h2 class="trending-h2">Trending:</h2>
-        <p class="trending-p">Reactions, Entertainment, Sports, Stickers, Artists</p>
-        <div class="bar"></div>
-        <div class="gifos-results"></div>
-
-    </section>
-
-    <section class="sect-trending-gif">
-
-        <h1 class="trend-h1">Trending GIFOS</h1>
-        <p class="trend-p-mob">Mira los últimos</br> GIFOS de nuestra comunidad.</p>
-        <p class="trend-p-desk">Mira los últimos GIFOS de nuestra comunidad.</p>
-        <div class="trend-galery">
-            <div class="slider-left">
-                <button class="slider slider-l"><img src="./iconos/button-slider-left.svg" alt=""></button>
-                <button class="slider-hover slider-hover-l"><img src="./iconos/button-slider-left-hover.svg" alt=""></button>
-            </div>
-            <div class="trend-gifos" id="trend-gifos"></div>
-            <div class="slider-right">
-                <button class="slider slider-r"><img src="./iconos/Button-Slider-right.svg" alt=""></button>
-                <button class="slider-hover slider-hover-r"><img src="./iconos/Button-Slider-right-hover.svg" alt=""></button>
-            </div>
-        </div>
-
-    </section>
-</main>
-
-<footer>
-    <h1 class="footer-title">Compartir en:</h1>
-    <div class="social-media">
-        <a class="media-icon" href=""><img src="./iconos/icon_facebook.svg" alt=""></a>
-        <a class="media-icon" href=""><img src="./iconos/icon-twitter.svg" alt=""></a>
-        <a class="media-icon" href=""><img src="./iconos/icon_instagram.svg" alt=""></a>
-    </div>
-    <h2 class="rights">© GIFOS 2021 All Rights Reserved.</h2>
-</footer>
-
+</body>
 </html>

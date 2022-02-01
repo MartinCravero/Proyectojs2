@@ -84,6 +84,11 @@ a{
     font-size: 15px;
 }
 
+.btndark{
+    color: #FFFFFF;
+    font-size: 15px;
+}
+
 /*-------------MAIN-------------*/
 .sect-searcher{
     display: flex;
@@ -112,7 +117,7 @@ a{
 
 .searcher{
     max-width: 551px;
-    width: 90%;
+    width: 80%;
     font-family: Roboto;
     font-size: 16px;
 }
@@ -120,18 +125,17 @@ a{
 .searcher .searchInput{
     width: 100%;
     border-radius: 27px;
-    border: solid #572EE5;
+    border: solid #572EE5 1px;
     position: relative;   
 }
 
 .searchInput input{
-    width: 750%;
+    width: 75%;
     height: 50px;
     outline: none;
     border: none;
     border-radius: 27px;
     margin-left: 54px;
-    /*box-shadow: 0px 1px 5px rgba(0,0,0,0.1);*/
 }
 
 .searchInput .autocompletBox{
@@ -147,21 +151,40 @@ a{
     pointer-events: auto;
 }
 
-
-
 .iconSearch{
     position: absolute;
     top: 15px;
-    right: 20px;
+    right: 25px;
+}
+
+.iconSearch.active{
+    position: absolute;
+    top: 15px;
+    left: 20px;
+}
+
+.iconDelete.active{
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+}
+
+.iconDelete{
+    display: none;
 }
 
 .autocompletBox .searchItem{
     list-style: none;
     margin-left: 54px;
-    width: 100%;
+    width: 85%;
     cursor: default;
     border-radius: 3px;
     display: none;
+}
+
+.iconSearchItem{
+    margin: 0 1.5vw 0 -3vw;
 }
 
 .autocompletBox.active .searchItem{
@@ -187,6 +210,119 @@ a{
     width: 157px;
     height: 1px;
     margin-top: 157px;
+}
+
+.moreResults{
+    display: none;
+    width: 127px;
+    height: 50px;
+    margin: 78px 0px;
+}
+
+.moreResultsButtHover{
+    display: none;
+}
+
+.moreResults:hover .moreResultsButt{
+    display:none;
+}
+
+.moreResults:hover .moreResultsButtHover{
+    display:block;
+}
+
+.noFav{
+    display: none;
+}
+
+.gifSearchImg, .gifRend{
+    width: 100%;
+    height: 100%;
+}
+
+.gifosResults{
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: space-evenly;
+}
+
+.gifSearchCont{
+    width: 156px;
+    height: 120px;
+    margin-top: 18px;
+}
+
+.button-gif.zoom{
+    display: none;
+}
+
+.gifSearchHover{
+    display: none;
+}
+
+.gifSearchCont.active{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.gifSearchCont.active .gifSearchImg{
+    width: 318px;
+    height: 245px;
+}
+
+.gifSearchCont.active .gifSearchHover{
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.gifSearchCont.active .button-gif{
+    background-color: #FFFFFF;
+    border:none;
+    position: absolute;
+}
+
+.gifSearchCont.active .button-gif.close{
+    top:10%;
+    right:10%;
+    height:14px;
+}
+
+.gifSearchCont.active .button-gif.fav, .button-gif.noFav{
+    top:72.5%;
+    right:25%;
+    height: 18px;
+}
+
+.gifSearchCont.active .button-gif.down{
+    top:72.5%;
+    right:12%;
+    height: 36px;
+}
+
+.gifSearchCont.active .gif-text{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top:72.5%;
+    left:7%;
+}
+
+.gifSearchCont.active .gif-text .text-user{
+    font-size: 15px;
+    font-weight: 200;
+    width: 50%;
+}
+
+.gifSearchCont.active .gif-text .text-name{
+    font-size: 16px;
+    width: 50%;
 }
 
 /*-------------TRENDING-------------*/
@@ -253,6 +389,22 @@ a{
     display: none;
 }
 
+
+.gifSearchCont.active, .gif-container.active{
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    background-color: #FFFFFF;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    z-index: 1;
+    width: 100%;
+    margin: 0;
+
+}
 /*-------------FOOTER-------------*/
 footer{
     display: flex;
@@ -280,6 +432,8 @@ footer{
     font-weight: 400;
     margin: 47.8px 0 23px 0;
 }
+
+
 
 @media screen and (min-width:1024px) {
 
@@ -364,6 +518,73 @@ footer{
         width: 402px;
     }
 
+    .gifosResults{
+        display: flex;
+        width: 1160px;
+        flex-wrap: wrap;
+        margin: auto;
+        justify-content: space-between;
+    }
+    
+    .gifSearchCont {
+        position: relative;
+        width: 260px;
+        height: 200px;
+        margin: 15px 0px;
+    }
+
+    
+
+    .gifSearchImg, .gifRend{
+        width:100%;
+        height:100%;
+    }
+
+    .gifSearchHover{
+        position:absolute;
+        display:block;
+        width:100%;
+        height:100%;
+        top:0;
+        left:0;
+        background-color:#572EE5;
+        opacity:0;
+    }
+
+    .gifSearchCont:hover .gifSearchHover{
+        opacity:0.7;
+    }
+
+    .button-gif.zoom{
+        display:inline-block;
+    }
+
+    .gifSearchCont.active, .gif-container.active{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        position:fixed;
+        background-color:#FFFFFF;
+        left:0;
+        right:0;
+        top:0;
+        bottom:0;
+        height:100%;
+        z-index:1;
+        width:100%;
+        margin:0;
+    }
+
+    .gifSearchCont.active  .gifSearchImg, .gif-container.active .gif-img{
+        height:385px;
+        width:auto;
+    }
+
+    .gifSearchCont.active .gifSearchHover, .gif-container.active .gif-hover{
+        background-color:transparent;
+        opacity:1;
+    }
+ 
 /*-------------TRENDING DESKTOP-------------*/
     .sect-trending-gif{
         height: 52vw;
@@ -393,7 +614,7 @@ footer{
     .gif-cont{
         width: 357px;
         height: 275px;
-        margin: 53px 29px 182px 0;
+        margin: 53px 15px 182px 15px;
     }
 
     .trend-gifos{
@@ -408,8 +629,8 @@ footer{
     
     .gif-hover{
         position: absolute;
-        width: 357px;
-        height: 275px;
+        width: 100%;
+        height: 100%;
         top: 0;
         left: 0;
         background-color: #572EE5;
@@ -429,7 +650,31 @@ footer{
 
     .button-gif{
         border-radius: 6px;
+        border: none;
         margin: 5% 1% 0 0;
+        background-color: transparent;
+    }
+
+    .button-gif.close{
+        display: none;
+    }
+
+    .gifSearchCont.active .button-gif.close, .gif-container.active .button-gif.close{
+        position: absolute;
+        top: 0;
+        right: 5%;
+        display:block;
+        border: none;
+        height: 15,2px;
+    }
+
+    .gifSearchCont.active .button-gif.zoom, .gif-container.active .button-gif.zoom{
+        display: none;
+    }
+
+    .gifSearchCont.active .buttons, .gif-container.active .buttons{
+        margin-top: 80vh;
+        right: 5%;
     }
 
     .gif-text{
@@ -442,15 +687,30 @@ footer{
         left: 3%;
     }
 
+    .gifSearchCont.active .gif-text, .gif-container.active .gif-text{
+        color: black;
+        opacity: 1;
+    }
+
     .text-user{
         font-weight: 200;
+    }
+
+    .gifSearchCont.active .text-user, .gif-container.active .text-user{
+        font-size: 15px;
     }
 
     .text-name{
         font-weight: 600;
     }
 
-    .slider-left {
+    .gifSearchCont.active .text-name, .gif-container.active .text-name{
+        margin-top: 10px;
+        font-size: 16px;
+        font-weight: 800;
+    }
+
+    .slider-left .slider-right{
         display: flex;
         width: 40px;
         height: 40px;
@@ -458,6 +718,15 @@ footer{
 
     .slider{
         display: block;
+        margin-top: 10vw;
+    }
+
+    .slider-l{
+        margin-left: 10vw;
+    }
+
+    .slider-r{
+        margin-right: 10vw;
     }
 
     .slider-left:hover .slider-l{
@@ -465,7 +734,9 @@ footer{
     }
 
     .slider-left:hover .slider-hover-l{
-        display: block;        
+        display: block;
+        margin-top: 10vw;
+        margin-left: 10vw;        
     }
 
     .slider-right:hover .slider-r{
@@ -473,7 +744,9 @@ footer{
     }
 
     .slider-right:hover .slider-hover-r{
-        display: block;        
+        display: block;
+        margin-top: 10vw;
+        margin-right: 10vw;        
     }
 
 
@@ -497,3 +770,50 @@ footer{
         width: 100px;
     }
 }
+
+
+/*-------------DARK MODE-------------*/
+body.dark{
+    background-color: #37383c;
+}
+
+body.dark main .sect-trending-gif{
+    background-color: #222326;
+}
+
+body.dark main .sect-searcher .searcher .searchInput .inputSearch{
+    background-color: #37383c;
+}
+
+body.dark a, body.dark .div-title, body.dark .trending-h2, body.dark .trending-p, body.dark main .sect-trending-gif .trend-h1, body.dark main .sect-trending-gif .trend-p-mob, body.dark main .sect-trending-gif .trend-p-desk, body.dark .footer-title, body.dark .rights{
+    color: white;
+}
+
+body.dark .searchInput{
+    border: #FFFFFF solid 1px;
+}
+
+body.dark .searchInput .inputSearch{
+    color: #FFFFFF;
+}
+
+body.dark .autocompletBox{
+    color: #FFFFFF;
+}
+
+body.dark .zoomGif.active{
+    background-color: #000000;
+}
+
+body.dark .gif-container.active .gif-text, body.dark .gifSearchCont.active .gif-text{
+    color: #FFFFFF;
+}
+
+body.dark .gif-container.active, body.dark .gifSearchCont.active{
+    background-color: #37383c;
+}
+
+body.dark .checkburger:checked~.menu-burger{
+    background-color: #000000;
+}
+
