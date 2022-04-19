@@ -3,11 +3,14 @@ window.onload = () => {
 //VARIABLES//    
     const apikey = 'IqNkQ8nTgBWKmwHJJFoJnLjUfHXZ5JD0';
     const searchWrapper = document.querySelector(".searchInput");
+    let makeGifBtn = document.getElementById("makeGifBtn");
+    let makeHover = document.getElementById("makeHover");
     const inputBox = searchWrapper.querySelector("input");
     let suggBox = document.getElementById('autocompletBox');
     const gifosResults = document.getElementById('gifosResults');
     const moreResults = document.getElementById('moreResults');
     let moreResultsButt = document.getElementById('moreResultsButt');
+    let btnMakeGif = document.getElementById('btnMakeGif');
     let moreResultsButtHover = document.getElementById('moreResultsButtHover');
     let trendGifos = document.getElementById('trend-gifos');
     let startingPosition = 0;
@@ -23,7 +26,10 @@ window.onload = () => {
     let trendingP = document.getElementById('trendingP');
     let gifFavorites = []; 
     let btnDarkMobile = document.getElementById('btnDarkMobile');
-    
+    let burger = document.getElementById('burger');
+    let crossBurger = document.getElementById('crossBurger');
+    let sliderLeft = document.getElementById('sliderLeft');
+    let sliderRight = document.getElementById('sliderRight');
 
 //////MODO NOCTURNO//////
 
@@ -37,19 +43,31 @@ window.onload = () => {
     if (localStorage.getItem("dark-mode") === "true"){
         body.classList.add("dark");
         logoMobile.setAttribute("src", "./iconos/logo-mobile-modo-noct.svg");
+        makeGifBtn.setAttribute("src", "./iconos/CTA-crear-gifo-modo-noc.svg");
+        makeHover.setAttribute("src", "./iconos/CTA-crear-gifo-hover-modo-noc.svg");
         moreResultsButt.setAttribute("src", "./iconos/CTA-ver+-modo-noc.svg");
         moreResultsButtHover.setAttribute("src", "./iconos/CTA-ver+hover-modo-noc.svg");
         imgIconSearch.setAttribute("src", "./iconos/icon-search-modo-noct.svg");
         imgIconDelete.setAttribute("src", "./iconos/close-modo-noct.svg");
+        burger.setAttribute("src", "./iconos/burger-modo-noct.svg");
+        crossBurger.setAttribute("src", "./iconos/close-modo-noct.svg");
+        sliderLeft.setAttribute("src", "./iconos/button-slider-left-md-noct.svg");
+        sliderRight.setAttribute("src", "./iconos/button-slider-right-md-noct.svg");
         btnDarkMode.innerHTML = "MODO DIURNO";
         btnDarkMobile.innerHTML = "MODO DIURNO";
     } else {
         body.classList.remove("dark");
         logoMobile.setAttribute("src", "./iconos/logo-mobile.svg");
+        makeGifBtn.setAttribute("src", "./iconos/button-crear-gifo.svg");
+        makeHover.setAttribute("src", "./iconos/CTA-crear-gifo-hover.svg");
         moreResultsButt.setAttribute("src", "./iconos/CTA-ver-mas.svg");
         moreResultsButtHover.setAttribute("src", "./iconos/CTA-ver-mas-hover.svg");
         imgIconSearch.setAttribute("src", "./iconos/icon-search.svg");
         imgIconDelete.setAttribute("src", "./iconos/close.svg");
+        burger.setAttribute("src", "./iconos/burger.svg");
+        crossBurger.setAttribute("src", "./iconos/close.svg");
+        sliderLeft.setAttribute("src", "./iconos/button-slider-left.svg");
+        sliderRight.setAttribute("src", "./iconos/Button-Slider-right.svg");
         btnDarkMode.innerHTML = "MODO NOCTURNO";
         btnDarkMobile.innerHTML = "MODO NOCTURNO";
     }
@@ -65,18 +83,30 @@ window.onload = () => {
             if (document.body.classList.contains("dark")){
                 localStorage.setItem("dark-mode", "true");
                 logoMobile.setAttribute("src", "./iconos/logo-mobile-modo-noct.svg");
+                makeGifBtn.setAttribute("src", "./iconos/CTA-crear-gifo-modo-noc.svg");
+                makeHover.setAttribute("src", "./iconos/CTA-crear-gifo-hover-modo-noc.svg");
                 moreResultsButt.setAttribute("src", "./iconos/CTA-ver+-modo-noc.svg");
                 moreResultsButtHover.setAttribute("src", "./iconos/CTA-ver+hover-modo-noc.svg");
                 imgIconSearch.setAttribute("src", "./iconos/icon-search-modo-noct.svg");
                 imgIconDelete.setAttribute("src", "./iconos/close-modo-noct.svg");
+                burger.setAttribute("src", "./iconos/burger-modo-noct.svg");
+                crossBurger.setAttribute("src", "./iconos/close-modo-noct.svg");
+                sliderLeft.setAttribute("src", "./iconos/button-slider-left-md-noct.svg");
+                sliderRight.setAttribute("src", "./iconos/button-slider-right-md-noct.svg");
                 btnSwitch.innerHTML = "MODO DIURNO";
             } else {
                 localStorage.setItem("dark-mode", "false");
                 logoMobile.setAttribute("src", "./iconos/logo-mobile.svg");
+                makeGifBtn.setAttribute("src", "./iconos/button-crear-gifo.svg");
+                makeHover.setAttribute("src", "./iconos/CTA-crear-gifo-hover.svg");
                 moreResultsButt.setAttribute("src", "./iconos/CTA-ver-mas.svg");
                 moreResultsButtHover.setAttribute("src", "./iconos/CTA-ver-mas-hover.svg");
                 imgIconSearch.setAttribute("src", "./iconos/icon-search.svg");
                 imgIconDelete.setAttribute("src", "./iconos/close.svg");
+                burger.setAttribute("src", "./iconos/burger.svg");
+                crossBurger.setAttribute("src", "./iconos/close.svg");
+                sliderLeft.setAttribute("src", "./iconos/button-slider-left.svg");
+                sliderRight.setAttribute("src", "./iconos/Button-Slider-right.svg");
                 btnSwitch.innerHTML = "MODO NOCTURNO";
             }
         })
@@ -91,14 +121,6 @@ window.onload = () => {
     }
 
     function imgNocturna(e,a) {
-        // btnDarkMode.addEventListener("click", ()=>{
-            // body.classList.toggle("dark")
-                // if(document.body.classList.contains("dark")){
-                //     a.innerHTML = `<img class="iconSearchItem" id="iconSearchItem"src="./iconos/icon-search-modo-noct.svg" alt="">${e}`
-                // } else {
-                //     a.innerHTML = `<img class="iconSearchItem" id="iconSearchItem"src="./iconos/icon-search.svg" alt="">${e}`
-                //     }
-
         if (localStorage.getItem("dark-mode") === "true"){
             a.innerHTML = `<img class="iconSearchItem" id="iconSearchItem"src="./iconos/icon-search-modo-noct.svg" alt="">${e}`
         } else {
@@ -156,13 +178,31 @@ window.onload = () => {
             a.style.display="none";
         })
     }
+
+    function downloadGif(a,url, filename){
+        a.addEventListener("click",() => {
+            fetch(url).then(
+                (response) => {
+                    return response.blob().then(
+                        (response) => {
+                            let newElement = document.createElement('a')
+                            newElement.href = URL.createObjectURL(response)
+                            newElement.setAttribute('download', filename)
+                            newElement.click()
+                        }
+                    )   
+                }
+            )
+        })
+    }
+
 ////////SECTION SEARCH////////
 
 
 //FUNCIÓN QUE PEGA A ENDOPOINT DE SUGERIDOS//
     async function getGifSearch (userData) {
         let linkSearch = `https://api.giphy.com/v1/gifs/search/tags?api_key=${apikey}&q=${userData}&limit=4`;
-        let response = await fetch (linkSearch)
+        let response = await fetch(linkSearch)
         response = await response.json()
         return response
     }
@@ -315,11 +355,18 @@ window.onload = () => {
 
 ///FUNCIÓN AGREGAR A FAVORITOS///
 
-                let FavBtn = document.getElementById(`Fav-${response.data[i].id}`)
-                let NoFavBtn = document.getElementById(`NoFav-${response.data[i].id}`)
-                favoriteGiff (FavBtn,NoFavBtn,response.data[i].id)
+                let FavBtn = document.getElementById(`Fav-${response.data[i].id}`);
+                let NoFavBtn = document.getElementById(`NoFav-${response.data[i].id}`);
+                favoriteGiff (FavBtn,NoFavBtn,response.data[i].id);
 
+///FUNCIÓN DESCARGAR GIF///
+
+                let downBtn = document.getElementById(`Down-${response.data[i].id}`);
+                let url = `${response.data[i].images['original'].url}`;
+                let filename = `${response.data[i].id}`;
+                downloadGif(downBtn,url,filename)
             }
+
             moreResults.style.display="block"
         }
         else {
@@ -351,16 +398,16 @@ window.onload = () => {
                 gifTrend.innerHTML = `
                                         <div class="gif-container" id="gifContTrend-${response.data[i].id}">
                                             <div class="gif-img">
-                                                <img src="${response.data[i].images.original.url} alt="" class="gif-trending" id="gif-trending">
+                                                <img src="${response.data[i].images.original.url} alt="" class="gif-trending" id="gifTrendRend-${response.data[i].id}">
                                             </div>
-                                            <div class="gif-hover">
+                                            <div class="gif-hover" id="gifHover-${response.data[i].id}">
                                                 <div class="buttons">
-                                                    <button class="button-gif fav" id="FavTrend-${response.data[i].id}"><img src="./iconos/icon-fav.svg" alt=""></button>
-                                                    <button class="button-gif noFav" id="NoFavTrend-${response.data[i].id}"><img src="./iconos/icon-fav-activev2.svg" alt=""></button>
-                                                    <button class="button-gif down" id="DownTrend-${response.data[i].id}"><img src="./iconos/icon-download.svg" alt=""></button>
-                                                    <button class="button-gif zoom" id="ZoomTrend-${response.data[i].id}"><img src="./iconos/icon-max-normal.svg" alt=""></button>
+                                                    <button class="button-gif fav" id="favTrend-${response.data[i].id}"><img src="./iconos/icon-fav.svg" alt=""></button>
+                                                    <button class="button-gif noFav" id="noFavTrend-${response.data[i].id}"><img src="./iconos/icon-fav-activev2.svg" alt=""></button>
+                                                    <button class="button-gif down" id="downTrend-${response.data[i].id}"><img src="./iconos/icon-download.svg" alt=""></button>
+                                                    <button class="button-gif zoom" id="zoomTrend-${response.data[i].id}"><img src="./iconos/icon-max-normal.svg" alt=""></button>
                                                 </div>
-                                                <button class="button-gif close" id="CloseTrend-${response.data[i].id}"><img src="./iconos/close.svg" alt=""></button>
+                                                <button class="button-gif close" id="closeTrend-${response.data[i].id}"><img src="./iconos/close.svg" alt=""></button>
                                                 <div class="gif-text">
                                                     <span class="text-user">${response.data[i].username}</span>
                                                     <span class="text-name">${response.data[i].title}</span> 
@@ -372,18 +419,32 @@ window.onload = () => {
 
 //////FUNCIONES DE BOTONES DE GIF//////
 
-///FUNCIÓN DE EXPANDIR///
+///FUNCIÓN DE EXPANDIR CELULAR///
 
-                let ZoomTrend = document.getElementById(`ZoomTrend-${response.data[i].id}`);
+                let gifImg = document.getElementById(`gifTrendRend-${response.data[i].id}`);
+                let gifCont = document.getElementById(`gifContTrend-${response.data[i].id}`);
+                let closeGif = document.getElementById(`closeTrend-${response.data[i].id}`);
+                expandGiff(gifImg, gifCont, closeGif);
+
+///FUNCIÓN DE EXPANDIR ESCRITORIO///
+
+                let ZoomTrend = document.getElementById(`zoomTrend-${response.data[i].id}`);
                 let gifContTrend = document.getElementById(`gifContTrend-${response.data[i].id}`);
-                let CloseTrend = document.getElementById(`CloseTrend-${response.data[i].id}`);
+                let CloseTrend = document.getElementById(`closeTrend-${response.data[i].id}`);
                 expandGiff(ZoomTrend, gifContTrend, CloseTrend);
 
 ///FUNCIÓN AGREGAR A FAVORITOS///
 
-                let FavBtnTrend = document.getElementById(`FavTrend-${response.data[i].id}`);
-                let NoFavBtnTrend = document.getElementById(`NoFavTrend-${response.data[i].id}`);
+                let FavBtnTrend = document.getElementById(`favTrend-${response.data[i].id}`);
+                let NoFavBtnTrend = document.getElementById(`noFavTrend-${response.data[i].id}`);
                 favoriteGiff(FavBtnTrend,NoFavBtnTrend,response.data[i].id);
+
+///FUNCIÓN DESCARGAR GIF///
+
+                let downBtnTrend = document.getElementById(`downTrend-${response.data[i].id}`);
+                let urlTrend = `${response.data[i].images['original'].url}`;
+                let filenameTrend = `${response.data[i].id}`;
+                downloadGif(downBtnTrend,urlTrend,filenameTrend)
 
             }
             console.log(response)

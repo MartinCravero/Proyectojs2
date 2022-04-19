@@ -11,30 +11,35 @@
 <body id="body">
     <header>
         <nav>
-            <a href="#" >
+            <a href="./index-home.html" >
                 <img class="logo" src="./iconos/logo-mobile.svg" alt="" id="logo-mobile">
             </a>
             <input id="checkburger" type="checkbox" class="check checkburger">
-            <label for="checkburger" class="check-bg burger"><img src="./iconos/burger.svg" alt="="></label>
-            <label for="checkburger" class="check-bg cross"><img src="./iconos/close.svg" alt="x"></label>
+            <label for="checkburger" class="check-bg burger"><img id="burger" src="./iconos/burger.svg" alt="="></label>
+            <label for="checkburger" class="check-bg cross"><img id="crossBurger" src="./iconos/close.svg" alt="x"></label>
             <ul class="menu-burger">
                 <li class="btndark" id="btnDarkMobile"><a href="#" >MODO NOCTURNO</a></li>
                 <span class="line"></span>
-                <li><a href="#" >FAVORITOS</a></li>
+                <li><a href="./index-fav.html" >FAVORITOS</a></li>
                 <span class="line"></span>
-                <li><a href="#" >MIS GIFOS</a></li>
+                <li><a href="./index-mygif.html" >MIS GIFOS</a></li>
                 <span class="line"></span>
             </ul>
         
             <ul class="menu-desck">
-                <li><a href="#" id="btnDarkMode">MODO NOCTURNO</a></li>
-                <li><a href="#" >FAVORITOS</a></li>
-                <li><a href="#" >MIS GIFOS</a></li>
-                <li><a href="#" >
-                        <input id="make-gif" type="checkbox" class="check make-gif">
-                        <label for="make-gif" class="make-notcheck"><img src="./iconos/button-crear-gifo.svg" alt="+"></label>
-                        <label for="make-gif" class="make-check"><img src="./iconos/CTA-crear-gifo-active.svg" alt="+"></label>
-                </a></li>
+                <li><a class="itemDesck" href="#" id="btnDarkMode">MODO NOCTURNO</a></li>
+                <li><a class="itemDesck" href="./index-fav.html" >FAVORITOS</a></li>
+                <li><a class="itemDesck" href="./index-mygif.html" >MIS GIFOS</a></li>
+                <li>
+                    <div class="makeAccess">
+                        <button class="makeAccessBtn">
+                            <a class="linkMake" href="./index-make.html">
+                                <img id="makeGifBtn" class="makeGifBtn" src="./iconos/button-crear-gifo.svg" alt="+">                                
+                                <img id="makeHover" class="makeHover" src="./iconos/CTA-crear-gifo-hover.svg" alt="+">
+                            </a>
+                        </button>
+                    </div>
+                </li>
             </ul>
         </nav>
     </header>
@@ -72,12 +77,12 @@
             <p class="trend-p-desk">Mira los últimos GIFOS de nuestra comunidad.</p>
             <div class="trend-galery">
                 <div class="slider-left">
-                    <button class="slider slider-l"><img src="./iconos/button-slider-left.svg" alt=""></button>
+                    <button class="slider slider-l"><img id="sliderLeft" src="./iconos/button-slider-left.svg" alt=""></button>
                     <button class="slider-hover slider-hover-l"><img src="./iconos/button-slider-left-hover.svg" alt=""></button>
                 </div>
                 <div class="trend-gifos" id="trend-gifos"></div>
                 <div class="slider-right">
-                    <button class="slider slider-r"><img src="./iconos/Button-Slider-right.svg" alt=""></button>
+                    <button class="slider slider-r"><img id="sliderRight"src="./iconos/Button-Slider-right.svg" alt=""></button>
                     <button class="slider-hover slider-hover-r"><img src="./iconos/Button-Slider-right-hover.svg" alt=""></button>
                 </div>
                 
@@ -96,9 +101,5 @@
     </footer>
 
 </body>
-<body>
 
-    
-
-</body>
 </html>

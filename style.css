@@ -270,43 +270,43 @@ a{
     align-items: center;
 }
 
-.gifSearchCont.active .gifSearchImg{
+.gifSearchCont.active .gifSearchImg, .gif-container.active .gif-img{
     width: 318px;
     height: 245px;
 }
 
-.gifSearchCont.active .gifSearchHover{
+.gifSearchCont.active .gifSearchHover, .gif-container.active .gif-hover{
     display: block;
     position: absolute;
     width: 100%;
     height: 100%;
 }
 
-.gifSearchCont.active .button-gif{
+.gifSearchCont.active .button-gif, .gif-container.active .button-gif{
     background-color: #FFFFFF;
     border:none;
     position: absolute;
 }
 
-.gifSearchCont.active .button-gif.close{
+.gifSearchCont.active .button-gif.close, .gif-container.active .button-gif.close{
     top:10%;
     right:10%;
     height:14px;
 }
 
-.gifSearchCont.active .button-gif.fav, .button-gif.noFav{
+.gifSearchCont.active .button-gif.fav, .gifSearchCont.active .button-gif.noFav, .gif-container.active .button-gif.fav, .gif-container.active .button-gif.noFav{
     top:72.5%;
-    right:25%;
+    right:40%;
     height: 18px;
 }
 
-.gifSearchCont.active .button-gif.down{
+.gifSearchCont.active .button-gif.down, .gif-container.active .button-gif.down{
     top:72.5%;
     right:12%;
     height: 36px;
 }
 
-.gifSearchCont.active .gif-text{
+.gifSearchCont.active .gif-text, .gif-container.active .gif-text{
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -314,13 +314,13 @@ a{
     left:7%;
 }
 
-.gifSearchCont.active .gif-text .text-user{
+.gifSearchCont.active .gif-text .text-user, .gif-container.active .gif-text .text-user{
     font-size: 15px;
     font-weight: 200;
     width: 50%;
 }
 
-.gifSearchCont.active .gif-text .text-name{
+.gifSearchCont.active .gif-text .text-name, .gif-container.active .gif-text .text-name{
     font-size: 16px;
     width: 50%;
 }
@@ -347,7 +347,7 @@ a{
     text-align: center;
     font-weight: 400;
 }
-.trend-p-desk{
+.trend-p-desk, .gif-hover{
     display: none;
 }
 
@@ -403,8 +403,13 @@ a{
     z-index: 1;
     width: 100%;
     margin: 0;
-
 }
+
+.gif-container.active .gif-trending{
+    height: 100%;
+    width: 100%;
+}
+
 /*-------------FOOTER-------------*/
 footer{
     display: flex;
@@ -433,7 +438,94 @@ footer{
     margin: 47.8px 0 23px 0;
 }
 
+/*-------------FAVORITES-------------*/
 
+.sect-favorite{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.favTitle{
+    font-size: 20px;
+    color: #572EE5;
+}
+
+.favImg{
+    height: 28px;
+}
+
+.favorites.fav{
+    display: none;
+}
+
+.favorites.noFav{
+    display:inline-block;
+}
+
+.favNoCont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.favNoContImg{
+    width: 150px;
+    margin-top: 30%;
+}
+
+.favNoContText{
+    width: 431px;
+    margin-top: 10%;
+    margin-bottom: 30%;
+    text-align: center;
+    font-size: 22px;
+    color: #50E3C2;
+}
+
+.gifFavorites.gifFavorites{
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.gifGets{
+    display: none;
+}
+/*-------------MY GIFS-------------*/
+
+.sect-myGif{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.imgMyGif{
+    margin-top: 10px;
+    width: 24px;
+}
+
+.textMyGif{
+    color: #572EE5;
+    font-size: 20px;
+}
+
+.myGifNoCont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 11%;
+}
+
+.myGifNoContImg{
+    height: 150px;
+}
+
+.myGifNoContText{
+    color:#50E3C2;
+    font-size: 22px;
+    margin: 2.9% 0 9.8%;
+}
 
 @media screen and (min-width:1024px) {
 
@@ -452,6 +544,7 @@ footer{
         flex-direction: row;
         justify-content: space-around;
         margin-right: 50px;
+        margin-top: 10px;
     }
 
     a{
@@ -460,12 +553,51 @@ footer{
         margin-right: 50px;
     }
 
-    .make-gif:checked~.make-notcheck{
+    .itemActive{
+        color:#9CAFC3;
+        font-size: 13px;
+        margin-right: 50px;
+    }
+
+    .itemDesck:hover {
+        text-decoration: underline solid 3px #50E3C2;
+    }
+
+    .linkMake{
+        color: transparent;
+    }
+    
+    .makeAccessBtn{
+        border: none;
+        background-color: transparent;
+    }
+
+    .makeAcces{
+        position: relative;
+    }
+
+    .makeActive, .makeHover{
         display: none;
     }
 
-    .make-gif:not(:checked)~.make-check{
+    .makeGifBtn{
+        position:absolute;
+        margin-top: -20px;
+    }
+
+    .makeAccess:not(:target) .makeActive{
         display: none;
+    }
+
+
+    .makeAccess:hover .makeGifBtn{
+        display: none;
+    }
+
+    .makeAccess:hover .makeHover{
+        display: block;
+        position: absolute;
+        margin-top: -20px;
     }
 
 /*-------------MAIN DESKTOP-------------*/
@@ -584,10 +716,10 @@ footer{
         background-color:transparent;
         opacity:1;
     }
- 
+
 /*-------------TRENDING DESKTOP-------------*/
     .sect-trending-gif{
-        height: 52vw;
+        height: 28vw;
     }
 
     .trend-h1{
@@ -629,6 +761,7 @@ footer{
     
     .gif-hover{
         position: absolute;
+        display: block;
         width: 100%;
         height: 100%;
         top: 0;
@@ -675,6 +808,10 @@ footer{
     .gifSearchCont.active .buttons, .gif-container.active .buttons{
         margin-top: 80vh;
         right: 5%;
+    }
+
+    .gifSearchCont.active .button-gif.fav{
+        right: 35%;
     }
 
     .gif-text{
@@ -764,13 +901,202 @@ footer{
 
 
     .social-media{
-        margin: 49.5px 0 51.5px -300px;
+        margin: 49.5px 200px 51.5px 0px;
         justify-content: center;
         align-items: center;
         width: 100px;
     }
+
+/*-------------FAVORITES DESCKTOP-------------*/
+
+.favTitle{
+    font-size: 25px;
 }
 
+.gifosResults.noFavorites{
+    width: 100%;
+    justify-content: center;
+}
+
+/*-------------MAKE DESCKTOP-------------*/
+
+.makeGifSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.mainMake{
+    position: relative;
+    display: flex;
+}
+
+.imagesCamara{
+    position: absolute;
+    align-self: center;
+    left: -230px;
+}
+
+.mainLight{
+    margin-bottom: 12px
+}
+
+.mainScreen{
+    border: 1px solid #572EE5;
+    height: 390px;
+    width: 688px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.video{
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.mainTitle, .secondTitle{
+    line-height: 30px;
+    color:#572EE5;
+    font-size: 25px;
+    text-align: center;
+}
+
+.secondTitle, .secondText, .makeButtonRec, .makeButtonFinish, .makeButtonUpload, .videoContainer{
+    display: none;
+}
+
+.spanMake-GIFOS{
+    color: #50E3C2;
+}
+
+.videoContainer{
+    position: relative;
+    align-self: center;
+    width: 480px;
+    height: 360px;
+}
+
+.videoHover{
+    position:absolute;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #572EE5;
+    opacity: 0.7;
+}
+
+.imgHover{
+    height: 22px;
+}
+
+.videoHoverText{
+    color: #FFFFFF;
+    margin-top: 10px;
+}
+
+.buttonsMyGif{
+    position: absolute;
+    display: flex;
+    top: 8px;
+    right: 8px;
+}
+
+.MyGifDown{
+    margin-right: 8px;
+}
+
+.mainText, .secondText{
+    font-family: Roboto;
+    font-size: 16px;
+    text-align: center;
+}
+
+.makeSteps{
+    width: 100%;
+    position: relative;
+    margin-top: 2%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.stepsNumbers{
+    width: 160px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.makeButton{
+    font-size: 18px;
+    border: 1px solid #572EE5;
+    text-align: center;
+    color: #572EE5;
+    font-weight: bold;
+    border-radius: 25px;
+    width: 32px;
+    height: 32px;
+    transform: translate(-50%);
+    background-color: transparent;
+}
+
+.stepsNumbers .makeButton.active{
+    background-color: #572EE5;
+    color: #FFFFFF;
+}
+
+.makeCounterBack{
+    display: none;
+    color: #572EE5;
+    font-size: 15px;
+    width: 150px;
+    position: absolute;
+    left: 65%;
+}
+
+.makeFilm{
+    position: absolute;
+    left: 80%;
+}
+
+.makeLine{
+    background-color:#572EE5;
+    height: 7px;
+    width: 800px;
+    border-radius: 30px;
+    margin-top: 25px;
+}
+
+.makeButtonStar, .makeButtonRec, .makeButtonFinish, .makeButtonUpload{
+    border: 1px solid #572EE5;
+    color: #572EE5;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    border-radius: 25px;
+    width: 127px;
+    height: 50px;
+    margin-top: 2%;
+    background-color: transparent;
+}
+
+.makeButtonHvr:hover {
+    color: #FFFFFF;
+    background-color: #572EE5;
+    border: 1px solid #FFFFFF;
+}
+
+
+}
 
 /*-------------DARK MODE-------------*/
 body.dark{
@@ -785,12 +1111,20 @@ body.dark main .sect-searcher .searcher .searchInput .inputSearch{
     background-color: #37383c;
 }
 
-body.dark a, body.dark .div-title, body.dark .trending-h2, body.dark .trending-p, body.dark main .sect-trending-gif .trend-h1, body.dark main .sect-trending-gif .trend-p-mob, body.dark main .sect-trending-gif .trend-p-desk, body.dark .footer-title, body.dark .rights{
+body.dark a, body.dark .div-title, body.dark .trending-h2, body.dark .trending-p, body.dark main .sect-trending-gif .trend-h1, body.dark main .sect-trending-gif .trend-p-mob, body.dark main .sect-trending-gif .trend-p-desk, body.dark .footer-title, body.dark .rights, body.dark .textMyGif, body.dark .myGifNoContText, body.dark .mainScreen, body.dark .mainTitle, body.dark .makeButton, body.dark .makeButtonStar, body.dark .makeButtonRec, body.dark .makeButtonFinish, body.dark .makeButtonUpload{
     color: white;
 }
 
 body.dark .searchInput{
     border: #FFFFFF solid 1px;
+}
+
+body.dark .mainScreen, body.dark .makeButton, body.dark .makeButtonStar, body.dark .makeButtonRec, body.dark .makeButtonFinish, body.dark .makeButtonUpload{
+    border: #FFFFFF solid 1px;
+}
+
+body.dark .makeLine{
+    background-color: #FFFFFF;
 }
 
 body.dark .searchInput .inputSearch{
@@ -815,5 +1149,9 @@ body.dark .gif-container.active, body.dark .gifSearchCont.active{
 
 body.dark .checkburger:checked~.menu-burger{
     background-color: #000000;
+}
+
+body.dark .slider{
+    background-color: #222326;
 }
 
