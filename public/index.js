@@ -126,16 +126,8 @@ window.onload = () => {
         } else {
             a.innerHTML = `<img class="iconSearchItem" id="iconSearchItem"src="./iconos/icon-search.svg" alt="">${e}`
         }
-    // })
     }
 
-    // function searchNotResults(e) {
-    //     gifSearchs.innerHTML=`
-    //         <h1 class="titleNotResults">${e}</h1>
-    //         <img src="./iconos/icon-mis-gifos-sin-contenido.svg" class="iconNotResults" alt="">
-    //         <h2 class="subtitleNotResults">Intenta con otra búsqueda</h2>`;
-    //     inputBox.value = "";
-    // }
 
     function seeMore(e){
         moreResults.addEventListener("click", ()=>{
@@ -225,7 +217,6 @@ window.onload = () => {
                                 searchItem.setAttribute("id", `item ${[i]}`);
                                 if (response.data.length > 0){
                                     imgNocturna(response.data[i].name, searchItem);
-                                    // searchItem.innerHTML = `<img class="iconSearchItem" id="iconSearchItem"src="./iconos/icon-search.svg" alt="">${response.data[i].name}`
                                     suggBox.appendChild(searchItem)}
                                     console.log(inputBox.value)
                                     let itemSelect = document.getElementById(`item ${[i]}`);
@@ -295,7 +286,6 @@ window.onload = () => {
         response = await response.json()
         console.log(response)
         gifPrint(response)
-        // let Zoom = document.getElementById(`Zoom-${response.data[i].id}`)
         
     }
 

@@ -25,10 +25,8 @@ if (localStorage.getItem("dark-mode") === "true"){
     logoMobile.setAttribute("src", "./iconos/logo-mobile-modo-noct.svg");
     makeGifBtn.setAttribute("src", "./iconos/CTA-crear-gifo-modo-noc.svg");
     makeHover.setAttribute("src", "./iconos/CTA-crear-gifo-hover-modo-noc.svg");
-    // moreResultsButt.setAttribute("src", "./iconos/CTA-ver+-modo-noc.svg");
-    // moreResultsButtHover.setAttribute("src", "./iconos/CTA-ver+hover-modo-noc.svg");
-    // imgIconSearch.setAttribute("src", "./iconos/icon-search-modo-noct.svg");
-    // imgIconDelete.setAttribute("src", "./iconos/close-modo-noct.svg");
+    moreResultsButt.setAttribute("src", "./iconos/CTA-ver+-modo-noc.svg");
+    moreResultsButtHover.setAttribute("src", "./iconos/CTA-ver+hover-modo-noc.svg");
     btnDarkMode.innerHTML = "MODO DIURNO";
     btnDarkMobile.innerHTML = "MODO DIURNO";
 } else {
@@ -36,10 +34,8 @@ if (localStorage.getItem("dark-mode") === "true"){
     logoMobile.setAttribute("src", "./iconos/logo-mobile.svg");
     makeGifBtn.setAttribute("src", "./iconos/button-crear-gifo.svg");
     makeHover.setAttribute("src", "./iconos/CTA-crear-gifo-hover.svg");
-    // moreResultsButt.setAttribute("src", "./iconos/CTA-ver-mas.svg");
-    // moreResultsButtHover.setAttribute("src", "./iconos/CTA-ver-mas-hover.svg");
-    // imgIconSearch.setAttribute("src", "./iconos/icon-search.svg");
-    // imgIconDelete.setAttribute("src", "./iconos/close.svg");
+    moreResultsButt.setAttribute("src", "./iconos/CTA-ver-mas.svg");
+    moreResultsButtHover.setAttribute("src", "./iconos/CTA-ver-mas-hover.svg");
     btnDarkMode.innerHTML = "MODO NOCTURNO";
     btnDarkMobile.innerHTML = "MODO NOCTURNO";
 }
@@ -53,20 +49,16 @@ if (localStorage.getItem("dark-mode") === "true"){
                 logoMobile.setAttribute("src", "./iconos/logo-mobile-modo-noct.svg");
                 makeGifBtn.setAttribute("src", "./iconos/CTA-crear-gifo-modo-noc.svg");
                 makeHover.setAttribute("src", "./iconos/CTA-crear-gifo-hover-modo-noc.svg");
-                // moreResultsButt.setAttribute("src", "./iconos/CTA-ver+-modo-noc.svg");
-                // moreResultsButtHover.setAttribute("src", "./iconos/CTA-ver+hover-modo-noc.svg");
-                // imgIconSearch.setAttribute("src", "./iconos/icon-search-modo-noct.svg");
-                // imgIconDelete.setAttribute("src", "./iconos/close-modo-noct.svg");
+                moreResultsButt.setAttribute("src", "./iconos/CTA-ver+-modo-noc.svg");
+                moreResultsButtHover.setAttribute("src", "./iconos/CTA-ver+hover-modo-noc.svg");
                 btnSwitch.innerHTML = "MODO DIURNO";
             } else {
                 localStorage.setItem("dark-mode", "false");
                 logoMobile.setAttribute("src", "./iconos/logo-mobile.svg");
                 makeGifBtn.setAttribute("src", "./iconos/button-crear-gifo.svg");
                 makeHover.setAttribute("src", "./iconos/CTA-crear-gifo-hover.svg");
-                // moreResultsButt.setAttribute("src", "./iconos/CTA-ver-mas.svg");
-                // moreResultsButtHover.setAttribute("src", "./iconos/CTA-ver-mas-hover.svg");
-                // imgIconSearch.setAttribute("src", "./iconos/icon-search.svg");
-                // imgIconDelete.setAttribute("src", "./iconos/close.svg");
+                moreResultsButt.setAttribute("src", "./iconos/CTA-ver-mas.svg");
+                moreResultsButtHover.setAttribute("src", "./iconos/CTA-ver-mas-hover.svg");
                 btnSwitch.innerHTML = "MODO NOCTURNO";
             }
         })
