@@ -1,89 +1,105 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIFOS</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./index.js"></script>
+</head>
+<body id="body">
+    <header>
+        <nav>
+            <a href="./index.html" >
+                <img class="logo" src="./iconos/logo-desktop.svg" alt="" id="logo-mobile">
+            </a>
+            <input id="checkburger" type="checkbox" class="check checkburger">
+            <label for="checkburger" class="check-bg burger"><img id="burger" src="./iconos/burger.svg" alt="="></label>
+            <label for="checkburger" class="check-bg cross"><img id="crossBurger" src="./iconos/close.svg" alt="x"></label>
+            <ul class="menu-burger">
+                <li class="btndark" id="btnDarkMobile"><a href="#" >MODO NOCTURNO</a></li>
+                <span class="line"></span>
+                <li><a href="./index-fav.html" >FAVORITOS</a></li>
+                <span class="line"></span>
+                <li><a href="./index-mygif.html" >MIS GIFOS</a></li>
+                <span class="line"></span>
+            </ul>
+        
+            <ul class="menu-desck">
+                <li><a class="itemDesck" href="#" id="btnDarkMode">MODO NOCTURNO</a></li>
+                <li><a class="itemDesck" href="./index-fav.html" >FAVORITOS</a></li>
+                <li><a class="itemDesck" href="./index-mygif.html" >MIS GIFOS</a></li>
+                <li>
+                    <div class="makeAccess">
+                        <button class="makeAccessBtn">
+                            <a class="linkMake" href="./index-make.html">
+                                <img id="makeGifBtn" class="makeGifBtn" src="./iconos/button-crear-gifo.svg" alt="+">                                
+                                <img id="makeHover" class="makeHover" src="./iconos/CTA-crear-gifo-hover.svg" alt="+">
+                            </a>
+                        </button>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/9.6.11/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/9.6.11/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/9.6.11/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/9.6.11/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/9.6.11/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/9.6.11/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/9.6.11/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/9.6.11/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/9.6.11/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/9.6.11/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <main>
+        <section class="sect-searcher" id="sectSearcher">
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
-    </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+                <div class="div-title">Inspírate, busca, guarda, y crea los mejores <span class="span-GIFOS">GIFOS</span></div>
+                <img class="img-main" src="./iconos/ilustra_header.svg" alt="">
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+            <div class="searcher">
+                <div class="searchInput">
+                    <input type="text" placeholder="Busca GIFOS y más" class="inputSearch" id="inputSearch">
+                    <div class="autocompletBox" id="autocompletBox"></div>
+                    <div class="iconSearch" id="iconSearch"><img id="imgIconSearch" src="./iconos/icon-search.svg" alt=""></div>
+                    <div class="iconDelete" id="iconDelete"><img id="imgIconDelete"src="./iconos/close.svg" alt=""></div>
+                </div>
+            </div>
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+            <h2 class="trending-h2">Trending:</h2>
+            <p class="trending-p" id="trendingP">Reactions, Entertainment, Sports, Stickers, Artists</p>
+            <div class="bar"></div>
+            <div class="gifosResults" id="gifosResults"></div>
+            <div class="moreResults" id="moreResults">
+                <img src="./iconos/CTA-ver-mas.svg"  class="moreResultsButt" id="moreResultsButt" alt="">
+                <img src="./iconos/CTA-ver-mas-hover.svg" class="moreResultsButtHover" id="moreResultsButtHover" alt="">
+            </div>
+
+        </section>
+
+        <section class="sect-trending-gif">
+
+            <h1 class="trend-h1">Trending GIFOS</h1>
+            <p class="trend-p-mob">Mira los últimos</br> GIFOS de nuestra comunidad.</p>
+            <p class="trend-p-desk">Mira los últimos GIFOS de nuestra comunidad.</p>
+            <div class="trend-galery">
+                <div class="slider-left">
+                    <button class="slider slider-l"><img id="sliderLeft" src="./iconos/button-slider-left.svg" alt=""></button>
+                    <button class="slider-hover slider-hover-l"><img src="./iconos/button-slider-left-hover.svg" alt=""></button>
+                </div>
+                <div class="trend-gifos" id="trend-gifos"></div>
+                <div class="slider-right">
+                    <button class="slider slider-r"><img id="sliderRight"src="./iconos/Button-Slider-right.svg" alt=""></button>
+                    <button class="slider-hover slider-hover-r"><img src="./iconos/Button-Slider-right-hover.svg" alt=""></button>
+                </div>
+                
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <h1 class="footer-title">Compartir en:</h1>
+        <div class="social-media">
+            <a class="media-icon" href=""><img src="./iconos/icon_facebook.svg" alt=""></a>
+            <a class="media-icon" href=""><img src="./iconos/icon-twitter.svg" alt=""></a>
+            <a class="media-icon" href=""><img src="./iconos/icon_instagram.svg" alt=""></a>
+        </div>
+        <h2 class="rights">© GIFOS 2021 All Rights Reserved.</h2>
+    </footer>
+
+</body>
+
 </html>

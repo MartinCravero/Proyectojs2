@@ -720,6 +720,7 @@ footer{
 /*-------------TRENDING DESKTOP-------------*/
     .sect-trending-gif{
         height: 28vw;
+        min-height: 550px;
     }
 
     .trend-h1{

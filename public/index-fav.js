@@ -10,7 +10,7 @@ window.onload = () => {
     let moreResultsButt = document.getElementById('moreResultsButt');
     let startingPosition = 0;
     let gifFavorites = [];
-    gifFavorites = localStorage.getItem("gifFavorites").split(",");
+    gifFavorites = localStorage.getItem("gifFavorites") ? localStorage.getItem("gifFavorites").split(",") : null;
     const gifosResults = document.getElementById('gifosResults');
 
 //////MODO NOCTURNO//////
